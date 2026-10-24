@@ -8,6 +8,7 @@ router = APIRouter(prefix="/api/eligibility", tags=["Eligibility"])
 
 
 @router.post("/match", response_model=EligibilityMatchResponse)
+@router.post("/evaluate", response_model=EligibilityMatchResponse)
 def match_student_eligibility(req: EligibilityMatchRequest):
     all_schemes = [ScholarshipScheme(**s) for s in STATIC_VERIFIED_SCHEMES]
 
