@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Database, FlaskConical, AlertCircle, Clock, AlertTriangle, CheckCircle } from 'lucide-react';
-import { VerificationStatus, DeadlineUrgency, EligibilityVerdict } from '../types';
+import type { VerificationStatus, DeadlineUrgency, EligibilityVerdict } from '../types';
 
 interface StatusBadgeProps {
   status: VerificationStatus;

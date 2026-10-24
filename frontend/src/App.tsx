@@ -4,6 +4,8 @@ import type { NavTab } from './components/Navbar';
 import type { StudentProfile } from './types';
 import { INITIAL_STUDENT_PROFILE } from './data/verifiedSchemes';
 
+import { LandingView } from './views/LandingView';
+
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavTab>('landing');
   const [profile, setProfile] = useState<StudentProfile>(INITIAL_STUDENT_PROFILE);
@@ -37,10 +39,13 @@ export const App: React.FC = () => {
       />
 
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center py-12">
-          <h2 className="text-2xl font-bold text-white mb-2">VidyaSetu Navigation Ready</h2>
-          <p className="text-slate-400 text-sm">Active Tab: <span className="text-teal-400 font-mono">{activeTab}</span></p>
-        </div>
+        {activeTab === 'landing' && <LandingView onNavigate={setActiveTab} />}
+        {activeTab !== 'landing' && (
+          <div className="text-center py-12">
+            <h2 className="text-2xl font-bold text-white mb-2">View: {activeTab}</h2>
+            <p className="text-slate-400 text-sm">Under active assembly</p>
+          </div>
+        )}
       </main>
 
       <footer className="border-t border-slate-800/80 bg-navy-950/60 py-6 px-4 text-center text-xs text-slate-500">
