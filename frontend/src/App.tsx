@@ -5,6 +5,7 @@ import type { StudentProfile } from './types';
 import { INITIAL_STUDENT_PROFILE } from './data/verifiedSchemes';
 
 import { LandingView } from './views/LandingView';
+import { ProfileWizardView } from './views/ProfileWizardView';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavTab>('landing');
@@ -40,7 +41,14 @@ export const App: React.FC = () => {
 
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === 'landing' && <LandingView onNavigate={setActiveTab} />}
-        {activeTab !== 'landing' && (
+        {activeTab === 'profile' && (
+          <ProfileWizardView
+            profile={profile}
+            onSaveProfile={setProfile}
+            onComplete={() => setActiveTab('discovery')}
+          />
+        )}
+        {activeTab !== 'landing' && activeTab !== 'profile' && (
           <div className="text-center py-12">
             <h2 className="text-2xl font-bold text-white mb-2">View: {activeTab}</h2>
             <p className="text-slate-400 text-sm">Under active assembly</p>
