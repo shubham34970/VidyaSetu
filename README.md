@@ -120,6 +120,41 @@ npm run build
 
 ---
 
+---
+
+## 📑 Round 1 Mentor & Evaluator Documentation
+- **Mentor & Judge Evaluation Guide:** [docs/ROUND_1_MENTOR_GUIDE.md](file:///C:/Users/shubh/Downloads/wt/VidyaSetu/docs/ROUND_1_MENTOR_GUIDE.md) (Live demo walkthrough, problem context, and criteria mapping)
+- **System Architecture Deep-Dive:** [docs/ARCHITECTURE.md](file:///C:/Users/shubh/Downloads/wt/VidyaSetu/docs/ARCHITECTURE.md) (Mermaid diagrams, data flows, and security policies)
+- **Chronological Git Development Log:** [docs/DEVELOPMENT_LOG.md](file:///C:/Users/shubh/Downloads/wt/VidyaSetu/docs/DEVELOPMENT_LOG.md) (Complete 18-commit audit trail)
+
+---
+
+## 🖥️ Six Core Interactive Dashboard Views
+1. **Overview & Impact Visualizer:** Real-time data counters highlighting India's ₹4,200+ Crore unclaimed welfare gap and the 84% technical rejection trap.
+2. **Student Profile Intake Wizard:** 3-step demographic, academic, and financial intake form with 1-click persona presets (UP Engineering OBC, AICTE Pragati Female, SC Polytechnic).
+3. **Scholarship Discovery Feed:** Multi-faceted scheme search with filtering by domicile, caste, and income ceiling, alongside verifiable official source attribution.
+4. **Scheme Rules & Circular Slide-Over:** Detailed breakdown of authorized benefits, required documents, and verbatim gazette citations.
+5. **Document Pre-Flight Compliance Auditor:** Heuristic checks validating the UP Revenue Board 3-year certificate validity cutoff and Aadhaar NPCI bank seeding.
+6. **Time-Series Deadline Tracker:** Urgent countdown meters, stale-data warnings, and circular extension detection (e.g. UP Post-Matric extended to Nov 15).
+
+---
+
+## 🔌 REST API Endpoints
+
+| Method | Endpoint | Description |
+| :---: | :--- | :--- |
+| `GET` | `/api/health` | Service health, version, and TinyFish CLI detection status |
+| `GET` | `/api/scholarships` | Paginated and filtered government scholarship schemes |
+| `GET` | `/api/scholarships/{id}` | Detailed scheme specification and circular attribution |
+| `POST` | `/api/student/profile` | Validates student demographics, income, and academic record |
+| `POST` | `/api/eligibility/match` | Multi-factor explainable eligibility matching engine |
+| `POST` | `/api/documents/audit` | Pre-flight compliance audit checking 3-yr rule & NPCI seeding |
+| `GET` | `/api/deadlines` | Time-series deadline observations and circular extensions |
+| `POST` | `/api/discovery/search` | Discovers live government schemes via TinyFish CLI & cache |
+| `POST` | `/api/discovery/fetch` | Extracts clean circular webpage text from target portals |
+
+---
+
 ## 🔒 Security & Privacy Practices
 - **No Aadhaar / Personal ID Storage:** Documents and sensitive student data are audited in-memory or client-side; no Aadhaar numbers or bank accounts are persisted.
 - **No Secret Leakage:** All secrets reside in local `.env` files strictly excluded via `.gitignore`.
@@ -130,3 +165,4 @@ npm run build
 ## 👥 Team TwoBit — KIET Group of Institutions
 - **Project Lead & Full-Stack Development:** Shubham Kumar
 - **Hackathon:** HackIIITD 2026 (Esya '26)
+

@@ -30,7 +30,8 @@
 | 16 | `c1ad710` | `feat(api): implement modular REST routers for scholarships, discovery, eligibility, audit, and deadlines` | API Routers | TestClient HTTP 200 checks | Verified (`origin/main`) |
 | 17 | `4a077db` | `feat(frontend): integrate frontend API client for live backend communication and discovery flow` | API Client | End-to-end integration check | Verified (`origin/main`) |
 | 18 | `6686b96` | `test(api): add comprehensive pytest test suite for eligibility, audit, and endpoints` | Test Suite | 14/14 Pytest tests PASSED | Verified (`origin/main`) |
-| 19 | *(Pending)* | `docs(round-1): create comprehensive mentor guide and architecture documentation` | Documentation | Doc links verified | In Progress |
+| 19 | `2c3a2be` | `docs(round-1): create comprehensive mentor guide and architecture documentation` | Documentation | Doc links verified | Verified (`origin/main`) |
+| 20 | *(Pending)* | `chore(release): final validation, lint/type checks, and release hardening for Round 1` | Release | Pytest & Vite Build Passed | In Progress |
 
 ---
 
