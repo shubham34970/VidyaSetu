@@ -9,6 +9,7 @@ import {
   Building,
   ArrowRight,
   ShieldCheck,
+  BarChart3,
 } from 'lucide-react';
 import type { ScholarshipScheme, StudentProfile, EligibilityEvaluation } from '../types';
 import { ProvenanceBadge, DeadlineBadge, VerdictBadge } from './StatusBadge';
@@ -18,6 +19,10 @@ interface ScholarshipCardProps {
   profile: StudentProfile;
   evaluation?: EligibilityEvaluation;
   onSelect: (scheme: ScholarshipScheme) => void;
+  // Compare feature (Round 2)
+  isInCompare?: boolean;
+  onToggleCompare?: () => void;
+  compareDisabled?: boolean;
 }
 
 export const evaluateLocalEligibility = (
@@ -124,11 +129,30 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
   profile,
   evaluation,
   onSelect,
+  isInCompare = false,
+  onToggleCompare,
+  compareDisabled = false,
 }) => {
   const evalResult = evaluation || evaluateLocalEligibility(scheme, profile);
 
+  // Scheme type badge color
+  const typeColors: Record<string, string> = {
+    MERIT: 'bg-blue-500/15 text-blue-300 border-blue-500/30',
+    MEANS: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+    MERIT_CUM_MEANS: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30',
+    CATEGORY_SPECIFIC: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
+    GENDER_SPECIFIC: 'bg-pink-500/15 text-pink-300 border-pink-500/30',
+    DISABILITY: 'bg-teal-500/15 text-teal-300 border-teal-500/30',
+    MINORITY: 'bg-orange-500/15 text-orange-300 border-orange-500/30',
+    FELLOWSHIP: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
+  };
+
   return (
-    <div className="rounded-2xl bg-navy-900/70 border border-slate-800 hover:border-slate-700 shadow-lg flex flex-col justify-between transition-all group overflow-hidden">
+    <div className={`rounded-2xl border shadow-lg flex flex-col justify-between transition-all group overflow-hidden ${
+      isInCompare
+        ? 'bg-violet-950/30 border-violet-500/50 ring-1 ring-violet-500/30'
+        : 'bg-navy-900/70 border-slate-800 hover:border-slate-700'
+    }`}>
       {/* Top Meta Bar */}
       <div className="p-5 border-b border-slate-800/80 bg-navy-950/40 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -146,6 +170,26 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
             }
           />
         </div>
+
+        {/* Scheme type + renewable badges */}
+        {(scheme.schemeType || scheme.isRenewable != null) && (
+          <div className="flex flex-wrap gap-1.5">
+            {scheme.schemeType && (
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${typeColors[scheme.schemeType] || 'bg-slate-700 text-slate-300 border-slate-600'}`}>
+                {scheme.schemeType.replace(/_/g, ' ')}
+              </span>
+            )}
+            {scheme.isRenewable != null && (
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
+                scheme.isRenewable
+                  ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
+                  : 'bg-slate-700 text-slate-400 border-slate-600'
+              }`}>
+                {scheme.isRenewable ? 'Renewable' : 'One-Time'}
+              </span>
+            )}
+          </div>
+        )}
 
         <div>
           <h3 className="text-base font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
@@ -215,16 +259,34 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
           title="Visit official portal in new tab"
         >
           <ExternalLink className="w-3.5 h-3.5 mr-1 text-slate-500" />
-          <span className="truncate max-w-[120px]">{scheme.portalName}</span>
+          <span className="truncate max-w-[100px]">{scheme.portalName}</span>
         </a>
 
-        <button
-          onClick={() => onSelect(scheme)}
-          className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 transition-colors"
-        >
-          <span>Details & Rules</span>
-          <ArrowRight className="w-3.5 h-3.5 ml-1" />
-        </button>
+        <div className="flex items-center gap-2">
+          {onToggleCompare && (
+            <button
+              onClick={onToggleCompare}
+              disabled={compareDisabled}
+              title={isInCompare ? 'Remove from comparison' : 'Add to comparison (max 3)'}
+              className={`p-1.5 rounded-lg text-[10px] border transition-colors ${
+                isInCompare
+                  ? 'bg-violet-500/20 text-violet-300 border-violet-500/40'
+                  : compareDisabled
+                  ? 'opacity-40 cursor-not-allowed bg-slate-900 text-slate-500 border-slate-700'
+                  : 'bg-slate-900 text-slate-400 border-slate-700 hover:border-violet-500/40 hover:text-violet-300'
+              }`}
+            >
+              <BarChart3 className="w-3.5 h-3.5" />
+            </button>
+          )}
+          <button
+            onClick={() => onSelect(scheme)}
+            className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 transition-colors"
+          >
+            <span>Details & Rules</span>
+            <ArrowRight className="w-3.5 h-3.5 ml-1" />
+          </button>
+        </div>
       </div>
     </div>
   );
