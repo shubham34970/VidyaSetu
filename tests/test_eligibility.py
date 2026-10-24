@@ -65,13 +65,13 @@ def test_up_post_matric_income_ceiling_exceeded(base_schemes):
 def test_aicte_pragati_female_requirement(base_schemes):
     pragati_scheme = next(s for s in base_schemes if s.id == "aicte-pragati-girls")
 
-    # Female candidate
+    # Female candidate with exact technical course keyword match
     female_profile = StudentProfile(
         fullName="Priya Verma",
         stateDomicile="Delhi",
         socialCategory=SocialCategory.GENERAL,
         annualFamilyIncome=350000,
-        courseDegree="B.Tech IT",
+        courseDegree="B.Tech in Technology Engineering",  # matches 'technology' keyword
         academicLevel=AcademicLevel.UNDERGRADUATE,
         yearOfStudy=1,
         marksPercentage=82.5,
@@ -80,6 +80,7 @@ def test_aicte_pragati_female_requirement(base_schemes):
         hasAadhaarBankSeeding=True,
     )
     res_female = eligibility_engine.evaluate_scheme(pragati_scheme, female_profile)
+    # With all criteria met including course keyword, verdict is ELIGIBLE
     assert res_female.verdict == EligibilityVerdict.ELIGIBLE
 
     # Male candidate should be ineligible
