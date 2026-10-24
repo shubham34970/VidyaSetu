@@ -7,6 +7,7 @@ import { INITIAL_STUDENT_PROFILE } from './data/verifiedSchemes';
 import { LandingView } from './views/LandingView';
 import { ProfileWizardView } from './views/ProfileWizardView';
 import { DiscoveryView } from './views/DiscoveryView';
+import { ScholarshipDetailModal } from './components/ScholarshipDetailModal';
 import { VERIFIED_SCHEMES } from './data/verifiedSchemes';
 import type { ScholarshipScheme } from './types';
 
@@ -67,6 +68,15 @@ export const App: React.FC = () => {
           </div>
         )}
       </main>
+
+      {selectedScheme && (
+        <ScholarshipDetailModal
+          scheme={selectedScheme}
+          profile={profile}
+          onClose={() => setSelectedScheme(null)}
+          onNavigateToAuditor={() => setActiveTab('auditor')}
+        />
+      )}
 
       <footer className="border-t border-slate-800/80 bg-navy-950/60 py-6 px-4 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
