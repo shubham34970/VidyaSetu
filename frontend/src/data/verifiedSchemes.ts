@@ -1,4 +1,4 @@
-import { ScholarshipScheme, StudentProfile, DocumentPreFlightItem, DeadlineRecord } from '../types';
+import type { ScholarshipScheme, StudentProfile, DocumentPreFlightItem, DeadlineRecord } from '../types';
 
 export const INITIAL_STUDENT_PROFILE: StudentProfile = {
   fullName: 'Aarav Sharma',
