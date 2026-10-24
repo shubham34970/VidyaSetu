@@ -26,6 +26,7 @@ from backend.routers.student import router as student_router
 from backend.routers.eligibility import router as eligibility_router
 from backend.routers.audit import router as audit_router
 from backend.routers.deadlines import router as deadlines_router
+from backend.routers.schemes import router as schemes_router  # Round 2: advanced search
 
 app.include_router(scholarships_router)
 app.include_router(discovery_router)
@@ -33,6 +34,7 @@ app.include_router(student_router)
 app.include_router(eligibility_router)
 app.include_router(audit_router)
 app.include_router(deadlines_router)
+app.include_router(schemes_router)  # Round 2: GET/POST /api/schemes with multi-filter
 
 @app.get("/api/health")
 def health_check():

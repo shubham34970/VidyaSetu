@@ -11,27 +11,29 @@ if (backend_dir / ".env").exists():
 elif (root_dir / ".env").exists():
     load_dotenv(root_dir / ".env")
 
+# Pre-compute CORS list before pydantic-settings sees it
+_cors_raw = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+_cors_list = [o.strip() for o in _cors_raw.split(",") if o.strip()]
+
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "VidyaSetu Welfare Intelligence API"
     VERSION: str = "1.0.0"
-    ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
-    BACKEND_HOST: str = os.getenv("BACKEND_HOST", "127.0.0.1")
-    BACKEND_PORT: int = int(os.getenv("BACKEND_PORT", "8000"))
-    CORS_ORIGINS: list[str] = [
-        origin.strip()
-        for origin in os.getenv(
-            "CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
-        ).split(",")
-        if origin.strip()
-    ]
-    TINYFISH_API_KEY: str = os.getenv("TINYFISH_API_KEY", "")
-    CACHE_TTL_SECONDS: int = int(os.getenv("CACHE_TTL_SECONDS", "86400"))
+    ENVIRONMENT: str = "development"
+    BACKEND_HOST: str = "127.0.0.1"
+    BACKEND_PORT: int = 8000
+    TINYFISH_API_KEY: str = ""
+    CACHE_TTL_SECONDS: int = 86400
 
     model_config = {
         "env_file": ".env",
+        "env_file_encoding": "utf-8",
         "extra": "ignore",
     }
+
+    @property
+    def CORS_ORIGINS(self) -> list[str]:
+        return _cors_list
 
 
 settings = Settings()
