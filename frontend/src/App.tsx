@@ -9,6 +9,7 @@ import { ProfileWizardView } from './views/ProfileWizardView';
 import { DiscoveryView } from './views/DiscoveryView';
 import { DocumentAuditorView } from './views/DocumentAuditorView';
 import { DeadlineTrackerView } from './views/DeadlineTrackerView';
+import { SettingsView } from './views/SettingsView';
 import { ScholarshipDetailModal } from './components/ScholarshipDetailModal';
 import { VERIFIED_SCHEMES } from './data/verifiedSchemes';
 import type { ScholarshipScheme } from './types';
@@ -65,16 +66,12 @@ export const App: React.FC = () => {
         )}
         {activeTab === 'auditor' && <DocumentAuditorView profile={profile} />}
         {activeTab === 'deadlines' && <DeadlineTrackerView />}
-        {activeTab !== 'landing' &&
-          activeTab !== 'profile' &&
-          activeTab !== 'discovery' &&
-          activeTab !== 'auditor' &&
-          activeTab !== 'deadlines' && (
-            <div className="text-center py-12">
-              <h2 className="text-2xl font-bold text-white mb-2">View: {activeTab}</h2>
-              <p className="text-slate-400 text-sm">Under active assembly</p>
-            </div>
-          )}
+        {activeTab === 'settings' && (
+          <SettingsView
+            backendOnline={backendOnline}
+            tinyfishInstalled={tinyfishInstalled}
+          />
+        )}
       </main>
 
       {selectedScheme && (
