@@ -11,7 +11,7 @@
 ## Round 1 Commit Matrix & Execution History
 
 | # | Commit Hash | Message / Description | Scope | Tests Passed | Remote Push Status |
-| :-: | :---: | :--- | :---: | :---: | :---: |
+| :-: | :---: | :--- | :--- | :---: | :---: |
 | 1 | `23d5326` | `chore: initialize VidyaSetu repository audit and implementation plan` | Docs / Plan | Environment audited | Verified (`origin/main`) |
 | 2 | `edf76e0` | `chore: setup project foundation with FastAPI health check and React dashboard scaffold` | Foundation | Pytest & Vite Build | Verified (`origin/main`) |
 | 3 | `ce98739` | `feat(domain): define domain models and types for welfare intelligence` | Domain | TypeScript Types Check | Verified (`origin/main`) |
@@ -31,48 +31,57 @@
 | 17 | `4a077db` | `feat(frontend): integrate frontend API client for live backend communication and discovery flow` | API Client | End-to-end integration check | Verified (`origin/main`) |
 | 18 | `6686b96` | `test(api): add comprehensive pytest test suite for eligibility, audit, and endpoints` | Test Suite | 14/14 Pytest tests PASSED | Verified (`origin/main`) |
 | 19 | `2c3a2be` | `docs(round-1): create comprehensive mentor guide and architecture documentation` | Documentation | Doc links verified | Verified (`origin/main`) |
-| 20 | *(Pending)* | `chore(release): final validation, lint/type checks, and release hardening for Round 1` | Release | Pytest & Vite Build Passed | In Progress |
+| 20 | `20da331` | `chore(release): final validation, lint/type checks, and release hardening for Round 1` | Release | Pytest & Vite Build Passed | Verified (`origin/main`) |
 
 ---
 
-## Detailed Milestone Records
+## Round 2 Commit Matrix & Execution History
 
-### 1. Milestone 0: Repository Audit & Planning
-- Audited workspace, toolchains (Python 3.13.2, Node.js v24.22.1, TinyFish CLI v0.52.1).
-- Generated `IMPLEMENTATION_PLAN.md` and initial development log.
-- Pushed commit `23d5326` to `origin/main`.
+| # | Commit Target / Hash | Message / Description | Scope | Tests Passed | Remote Push Status |
+| :-: | :---: | :--- | :--- | :---: | :---: |
+| 21 | `af80ad4` | `feat(normalization): add extended scholarship schemas and criteria models` | Normalization | Pydantic validation | Verified (`origin/main`) |
+| 22 | `1b803b5` | `feat(schemes): expand verified static scholarship repository across national and state portals` | Data Expansion | 14 verified schemes | Verified (`origin/main`) |
+| 23 | `d05cb57` | `feat(eligibility): implement extended multi-attribute deterministic eligibility engine` | Rule Engine | Deterministic checks | Verified (`origin/main`) |
+| 24 | `f24819d` | `test(eligibility): add comprehensive tests for extended eligibility boundaries and cutoffs` | Tests | 19 boundary tests | Verified (`origin/main`) |
+| 25 | `c6c8a4a` | `feat(deadlines): implement persistent deadline observation storage and change detection` | Deadlines | JSON persistence | Verified (`origin/main`) |
+| 26 | `b702712` | `feat(deadlines): add deadline observation history, refresh, and stale detection endpoints` | API Router | History & refresh | Verified (`origin/main`) |
+| 27 | `16645ed` | `test(deadlines): add test suite for deadline persistence, change detection, and history` | Tests | 20 persistence tests | Verified (`origin/main`) |
+| 28 | `1c0fbbe` | `feat(search): implement advanced search and multi-dimensional filter router` | Search API | Multi-filter engine | Verified (`origin/main`) |
+| 29 | `5b546ed` | `test(search): add comprehensive test suite for multi-filter queries, sorting, and pagination` | Tests | 55 search tests | Verified (`origin/main`) |
+| 30 | `bc70f90` | `feat(ui): implement side-by-side scholarship comparison and card badges` | Frontend UI | Comparison matrix | Verified (`origin/main`) |
+| 31 | `cc6fe72` | `feat(ui): implement advanced student-centric search studio and filter controls` | Frontend UI | 15+ filter controls | Verified (`origin/main`) |
+| 32 | `4b28012` | `feat(frontend): integrate schemes API client with fallback and profile matching` | API Client | Backend integration | Verified (`origin/main`) |
+| 33 | `b78c7ef` | `docs(round-2): create specialized guides for search, eligibility, audit, and deadlines` | Documentation | 4 specialized docs | Verified (`origin/main`) |
+| 34 | *(Pending)* | `docs(round-2): add comprehensive mentor guide and update development log` | Release Docs | Mentor guide & tests | In Progress |
 
-### 2. Milestone 1: Foundation Setup
-- Created root `.gitignore`, `.env.example`, `README.md`.
-- Set up FastAPI app with CORS and `/api/health` diagnostic endpoint.
-- Initialized React 18 + Vite + Tailwind CSS scaffold with civic-tech color palette.
-- Pushed commit `edf76e0` to `origin/main`.
+---
 
-### 3. Milestone 2: Six Core Dashboard Views
-- Created domain models in `types.ts` and authentic data in `verifiedSchemes.ts`.
-- Built Navbar shell, StatusBadge, LandingView, ProfileWizardView (with 1-click persona presets), DiscoveryView (with multi-faceted filtering), ScholarshipCard (with local deterministic evaluation), ScholarshipDetailModal (with verbatim gazette notices), DocumentAuditorView (with interactive 3-year statutory validity calculator), DeadlineTrackerView (with extension circular change logs), and SettingsView (with data source transparency and zero-Aadhaar storage guarantee).
-- Pushed commits `ce98739` through `d61936b` to `origin/main`.
+## Round 2 Engineering Achievements
 
-### 4. Milestone 3: FastAPI Backend & Pydantic v2
-- Defined strict schemas across `scholarship.py`, `profile.py`, `eligibility.py`, `audit.py`, and `discovery.py`.
-- Pushed commit `e35d06b` to `origin/main`.
+1. **Multi-Faceted Search Engine (`backend/routers/schemes.py`, `DiscoveryView.tsx`):**
+   - Free-text substring matching across name, authority, portal, keywords, and tags.
+   - Structured multi-filters for state domicile, reservation categories, educational level, year of study, institution type, family income ceilings, merit percentages, gender, disability, minority focus, renewal mode, and source verification.
+   - 5-dimensional sorting (`relevance`, `deadline`, `benefit_desc`, `name`, `recently_verified`).
+   - Side-by-side comparison matrix for up to 3 chosen scholarships.
 
-### 5. Milestone 4: TinyFish Integration Engine
-- Created `tinyfish_service.py` supporting both CLI subprocess execution and direct REST API fallback.
-- Added TTL cache layer and graceful degradation to official government baseline datasets.
-- Pushed commit `8deca80` to `origin/main`.
+2. **Expanded Real Coverage (14 Schemes across India):**
+   - Central Sector Scheme (MoE), UP Post-Matric (Gen/OBC & SC/ST), AICTE Pragati (Girls), AICTE Saksham (Specially-Abled), Delhi Higher Education Merit-cum-Means, Bihar Post-Matric (BC/EBC), Rajasthan CM Higher Education, Haryana SC Scholarship, UGC Ishan Uday (NER), Begum Hazrat Mahal (Minority Girls), UGC Single Girl Child, and UP Pre-Matric.
 
-### 6. Milestone 5 & 6: Eligibility Engine & Pre-Flight Document Auditor
-- Built explainable multi-attribute eligibility engine evaluating domicile, category, income cap, academic percentage, gender, and level.
-- Built document compliance auditor preventing the 84% rejection trap by enforcing the 3-year validity window under UP Revenue Board G.O. and checking NPCI bank seeding.
-- Pushed commits `36195ee` and `d496529` to `origin/main`.
+3. **Deterministic Explainability (`eligibility_service.py`):**
+   - Evaluates all statutory conditions with exact numeric boundaries.
+   - Returns clear arrays for `criteriaSatisfied`, `criteriaConflicting`, `missingInformation`, and `sourceEvidence`.
 
-### 7. Milestone 7: REST API Routers & Frontend Integration
-- Wired modular routers for `/api/scholarships`, `/api/discovery`, `/api/student`, `/api/eligibility`, `/api/documents`, and `/api/deadlines`.
-- Built typed frontend API client with offline fallback resilience in `frontend/src/services/api.ts`.
-- Pushed commits `c1ad710` and `4a077db` to `origin/main`.
+4. **Persistent Deadline Intelligence (`deadline_service.py`):**
+   - Saves observation history snapshots to `backend/data/deadline_observations.json`.
+   - Tracks change types (`NEW`, `UNCHANGED`, `CHANGED`, `WITHDRAWN`).
+   - Flags observations older than 24 hours as stale.
+   - Provides full historical audits via `/api/deadlines/{scheme_id}/history`.
 
-### 8. Milestone 8: Automated Pytest Suite & Verification
-- Authored 14 automated unit and integration tests across endpoints, eligibility matching, and document compliance rules.
-- 100% test pass rate (`14 passed in 2.35s`).
-- Pushed commit `6686b96` to `origin/main`.
+5. **108/108 Automated Pytest Tests Passing:**
+   - 55 search & filter tests
+   - 20 deadline persistence tests
+   - 19 extended eligibility boundary tests
+   - 6 endpoint integration tests
+   - 4 baseline eligibility tests
+   - 3 statutory document audit tests
+   - 1 health & diagnostic test
