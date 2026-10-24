@@ -68,28 +68,36 @@ export const evaluateLocalEligibility = (
   }
 
   // Income Ceiling Check
-  if (scheme.criteria.maxFamilyIncome !== undefined) {
-    if (profile.annualFamilyIncome <= scheme.criteria.maxFamilyIncome) {
-      satisfied.push(
-        `Income ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} within ceiling of ₹${scheme.criteria.maxFamilyIncome.toLocaleString('en-IN')}`
-      );
+  if (scheme.criteria.maxFamilyIncome != null) {
+    if (profile?.annualFamilyIncome != null) {
+      if (profile.annualFamilyIncome <= scheme.criteria.maxFamilyIncome) {
+        satisfied.push(
+          `Income ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} within ceiling of ₹${scheme.criteria.maxFamilyIncome.toLocaleString('en-IN')}`
+        );
+      } else {
+        conflicting.push(
+          `Income ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} exceeds limit of ₹${scheme.criteria.maxFamilyIncome.toLocaleString('en-IN')}`
+        );
+      }
     } else {
-      conflicting.push(
-        `Income ₹${profile.annualFamilyIncome.toLocaleString('en-IN')} exceeds limit of ₹${scheme.criteria.maxFamilyIncome.toLocaleString('en-IN')}`
-      );
+      missing.push('Annual family income required for verification');
     }
   }
 
   // Academic Marks Check
-  if (scheme.criteria.minMarksPercentage !== undefined) {
-    if (profile.marksPercentage >= scheme.criteria.minMarksPercentage) {
-      satisfied.push(
-        `Academic score ${profile.marksPercentage}% meets minimum ${scheme.criteria.minMarksPercentage}% threshold`
-      );
+  if (scheme.criteria.minMarksPercentage != null) {
+    if (profile?.marksPercentage != null) {
+      if (profile.marksPercentage >= scheme.criteria.minMarksPercentage) {
+        satisfied.push(
+          `Academic score ${profile.marksPercentage}% meets minimum ${scheme.criteria.minMarksPercentage}% threshold`
+        );
+      } else {
+        conflicting.push(
+          `Marks score ${profile.marksPercentage}% below required ${scheme.criteria.minMarksPercentage}%`
+        );
+      }
     } else {
-      conflicting.push(
-        `Marks score ${profile.marksPercentage}% below required ${scheme.criteria.minMarksPercentage}%`
-      );
+      missing.push('Academic marks required for verification');
     }
   }
 

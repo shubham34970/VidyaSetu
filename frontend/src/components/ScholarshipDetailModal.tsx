@@ -142,7 +142,7 @@ export const ScholarshipDetailModal: React.FC<ScholarshipDetailModalProps> = ({
               <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
                 <span className="text-slate-500 block text-[11px]">Annual Family Income Ceiling</span>
                 <span className="text-white font-medium mt-0.5 block">
-                  {scheme.criteria.maxFamilyIncome !== undefined
+                  {scheme.criteria.maxFamilyIncome != null
                     ? `₹${scheme.criteria.maxFamilyIncome.toLocaleString('en-IN')}`
                     : 'No Income Cap Specified'}
                 </span>
@@ -151,7 +151,7 @@ export const ScholarshipDetailModal: React.FC<ScholarshipDetailModalProps> = ({
               <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
                 <span className="text-slate-500 block text-[11px]">Min Marks Threshold</span>
                 <span className="text-white font-medium mt-0.5 block">
-                  {scheme.criteria.minMarksPercentage !== undefined
+                  {scheme.criteria.minMarksPercentage != null
                     ? `${scheme.criteria.minMarksPercentage}% aggregate`
                     : 'Pass'}
                 </span>

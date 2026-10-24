@@ -16,14 +16,42 @@ import type { ScholarshipScheme } from './types';
 
 import { api } from './services/api';
 
+const getTabFromHash = (): NavTab => {
+  const hash = window.location.hash.toLowerCase().replace('#', '');
+  if (hash === 'scholarships' || hash === 'discovery' || hash === 'schemes') return 'discovery';
+  if (hash === 'profile') return 'profile';
+  if (hash === 'auditor' || hash === 'documents') return 'auditor';
+  if (hash === 'deadlines') return 'deadlines';
+  if (hash === 'settings') return 'settings';
+  return 'landing';
+};
+
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<NavTab>('landing');
+  const [activeTab, setActiveTabState] = useState<NavTab>(() => getTabFromHash());
   const [profile, setProfile] = useState<StudentProfile>(INITIAL_STUDENT_PROFILE);
   const [schemes, setSchemes] = useState<ScholarshipScheme[]>(VERIFIED_SCHEMES);
   const [selectedScheme, setSelectedScheme] = useState<ScholarshipScheme | null>(null);
   const [backendOnline, setBackendOnline] = useState<boolean>(false);
   const [tinyfishInstalled, setTinyfishInstalled] = useState<boolean>(false);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
+
+  const setActiveTab = (tab: NavTab) => {
+    setActiveTabState(tab);
+    const hash = tab === 'discovery' ? 'scholarships' : tab === 'landing' ? '' : tab;
+    if (hash) {
+      window.location.hash = hash;
+    } else if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveTabState(getTabFromHash());
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   useEffect(() => {
     // Initial health check
