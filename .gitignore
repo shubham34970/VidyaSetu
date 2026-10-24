@@ -1,0 +1,44 @@
+# VidyaSetu Git Ignore
+
+# Environment Variables & Secrets
+.env
+*.env
+!.env.example
+*.pem
+*.key
+*.cert
+
+# Python & Pytest
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+venv/
+ENV/
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+*.local
+
+# Database & Cache
+*.sqlite3
+*.db
+backend/cache/
+*.log
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
