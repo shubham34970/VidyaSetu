@@ -28,16 +28,16 @@ interface DiscoveryViewProps {
   isSyncing?: boolean;
 }
 
-// ── Shared select style ──────────────────────────────────────────────────────
+// ── Shared select & input style ──────────────────────────────────────────────
 const SELECT_CLS =
-  'w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-300 focus:outline-none focus:border-teal-500 transition-colors';
-const LABEL_CLS = 'block text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1';
+  'w-full h-9 px-2.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700/80 text-xs text-slate-200 focus:outline-none focus:border-teal-500 transition-colors';
+const LABEL_CLS = 'block text-[11px] font-medium text-slate-400 mb-1';
 
 // ── Filter chip for active filter display ───────────────────────────────────
 const FilterChip: React.FC<{ label: string; onRemove: () => void }> = ({ label, onRemove }) => (
-  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-teal-500/15 text-teal-300 border border-teal-500/30">
+  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-800 text-teal-300 border border-slate-700/80">
     {label}
-    <button onClick={onRemove} className="hover:text-white transition-colors">
+    <button onClick={onRemove} className="hover:text-white transition-colors" aria-label={`Remove filter ${label}`}>
       <X className="w-3 h-3" />
     </button>
   </span>
@@ -241,32 +241,36 @@ export const DiscoveryView: React.FC<DiscoveryViewProps> = ({
     [schemes, compareIds]
   );
 
+  const hasFiltersActive = hasActiveFilters({ ...filters, onlyEligible: false, query: '' });
+
   return (
-    <div className="space-y-6 py-2">
-      {/* ── Page header ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-slate-800 pb-6">
+    <div className="space-y-4 py-2">
+      {/* ── 1. Simplified Page Header ───────────────────────────────────── */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800/80 pb-3">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/20 mb-2">
-            <Compass className="w-3.5 h-3.5" />
-            <span>Scholarship Discovery Engine</span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Higher-Education Schemes & Gazette Circulars
+          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            Higher-Education Scholarships & Gazette Circulars
           </h1>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Cross-checked against your profile ({profile.fullName} • {profile.stateDomicile} •{' '}
-            {profile.socialCategory}).
-          </p>
+          <div className="flex items-center gap-2 text-xs text-slate-400 mt-1 flex-wrap">
+            <span>Find scholarships matched to your profile</span>
+            <span className="text-slate-600">•</span>
+            <span className="text-slate-300 font-medium">{schemes.length} total</span>
+            <span className="text-slate-600">•</span>
+            <span className="inline-flex items-center gap-1.5 text-teal-400 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+              {eligibleCount} {eligibleCount === 1 ? 'match' : 'matches'} for you
+            </span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 self-start sm:self-center shrink-0">
           {compareIds.size > 0 && (
             <button
               id="btn-compare-view"
               onClick={() => setShowCompare(true)}
-              className="inline-flex items-center px-4 py-2 rounded-xl text-xs font-semibold bg-violet-500/20 hover:bg-violet-500/30 text-violet-300 border border-violet-500/40 transition-colors"
+              className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 border border-teal-500/30 transition-colors"
             >
-              <BarChart3 className="w-3.5 h-3.5 mr-1.5" />
+              <BarChart3 className="w-3.5 h-3.5 mr-1" />
               Compare ({compareIds.size})
             </button>
           )}
@@ -275,52 +279,49 @@ export const DiscoveryView: React.FC<DiscoveryViewProps> = ({
               id="btn-refresh-discovery"
               onClick={onRefreshDiscovery}
               disabled={isSyncing}
-              className="inline-flex items-center px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors disabled:opacity-50"
+              title="Sync with official scholarship circulars"
+              className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 transition-colors disabled:opacity-50"
             >
-              <RefreshCw className={`w-3.5 h-3.5 mr-1.5 ${isSyncing ? 'animate-spin text-teal-400' : ''}`} />
+              <RefreshCw className={`w-3.5 h-3.5 mr-1.5 ${isSyncing ? 'animate-spin text-teal-400' : 'text-slate-400'}`} />
               {isSyncing ? 'Syncing…' : 'Sync Portals'}
             </button>
           )}
-          <div className="p-3 rounded-xl bg-teal-950/60 border border-teal-500/30 text-right">
-            <div className="text-[10px] text-teal-400 font-semibold uppercase tracking-wider">Profile Matches</div>
-            <div className="text-lg font-black text-white">
-              {eligibleCount}{' '}
-              <span className="text-xs font-normal text-slate-400">/ {schemes.length} schemes</span>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* ── Search + filter bar ───────────────────────────────────────────── */}
-      <div className="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
-        {/* Primary search row */}
-        <div className="p-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          {/* Free-text search */}
-          <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3 pointer-events-none" />
+      {/* ── 2. Compact Discovery Toolbar ─────────────────────────────────── */}
+      <div className="rounded-xl bg-slate-900/60 border border-slate-800/80 overflow-hidden">
+        <div className="p-2.5 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          {/* Prominent Search Input */}
+          <div className="relative flex-1 min-w-[200px]">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5 pointer-events-none" />
             <input
               id="search-query-input"
               type="text"
               value={filters.query}
               onChange={(e) => setFilter('query', e.target.value)}
-              placeholder="Search scheme name, ministry, state, or tag…"
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors"
+              placeholder="Search scheme name, ministry, state, or keywords…"
+              className="w-full h-9 pl-9 pr-8 rounded-lg bg-slate-950 border border-slate-700/80 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors"
             />
             {filters.query && (
-              <button onClick={() => setFilter('query', '')} className="absolute right-3 top-2.5 text-slate-500 hover:text-white">
+              <button
+                onClick={() => setFilter('query', '')}
+                className="absolute right-2.5 top-2.5 text-slate-500 hover:text-white"
+                aria-label="Clear search"
+              >
                 <X className="w-4 h-4" />
               </button>
             )}
           </div>
 
-          {/* Sort */}
-          <div className="flex items-center gap-2">
+          {/* Sort Selector */}
+          <div className="flex items-center gap-1.5 shrink-0">
             <ArrowUpDown className="w-3.5 h-3.5 text-slate-500 shrink-0" />
             <select
               id="sort-select"
               value={filters.sort}
               onChange={(e) => setFilter('sort', e.target.value as SearchFilters['sort'])}
-              className="px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-slate-300 focus:outline-none focus:border-teal-500 transition-colors"
+              className="h-9 px-2.5 rounded-lg bg-slate-950 border border-slate-700/80 text-xs text-slate-300 focus:outline-none focus:border-teal-500 transition-colors"
             >
               {SORT_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>{o.label}</option>
@@ -328,206 +329,238 @@ export const DiscoveryView: React.FC<DiscoveryViewProps> = ({
             </select>
           </div>
 
-          {/* Eligible only toggle */}
+          {/* Small Eligible Only Toggle */}
           <button
             id="btn-eligible-only"
             onClick={() => setFilter('onlyEligible', !filters.onlyEligible)}
-            className={`px-3.5 py-2.5 rounded-xl text-xs font-semibold border transition-colors flex items-center gap-1.5 whitespace-nowrap ${
+            className={`h-9 px-3 rounded-lg text-xs font-medium border transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
               filters.onlyEligible
-                ? 'bg-teal-500 text-slate-950 border-teal-400 font-bold'
-                : 'bg-slate-950 text-slate-300 border-slate-700 hover:border-slate-600'
+                ? 'bg-teal-500/20 text-teal-300 border-teal-500/40'
+                : 'bg-slate-950 text-slate-400 border-slate-700/80 hover:text-slate-200'
             }`}
           >
-            <CheckCircle2 className="w-3.5 h-3.5" />
-            Eligible ({eligibleCount})
+            <CheckCircle2 className="w-3.5 h-3.5 text-teal-400" />
+            Eligible only ({eligibleCount})
           </button>
 
-          {/* Advanced filters toggle */}
+          {/* Filters Toggle Button */}
           <button
             id="btn-advanced-filters"
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className={`px-3.5 py-2.5 rounded-xl text-xs font-semibold border transition-colors flex items-center gap-1.5 whitespace-nowrap ${
-              showAdvanced
-                ? 'bg-slate-700 text-white border-slate-600'
-                : 'bg-slate-950 text-slate-300 border-slate-700 hover:border-slate-600'
+            className={`h-9 px-3 rounded-lg text-xs font-medium border transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
+              showAdvanced || hasFiltersActive
+                ? 'bg-slate-800 text-teal-300 border-teal-500/30'
+                : 'bg-slate-950 text-slate-300 border-slate-700/80 hover:text-white'
             }`}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
-            Filters {hasActiveFilters({ ...filters, onlyEligible: false, query: '' }) && <span className="ml-1 px-1.5 py-0.5 rounded-full bg-teal-500 text-slate-950 text-[10px] font-bold">{activeChips.filter(c => c.key !== 'onlyEligible').length}</span>}
-            {showAdvanced ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+            <span>Filters</span>
+            {hasFiltersActive && (
+              <span className="px-1.5 py-0.2 rounded-full bg-teal-500 text-slate-950 text-[10px] font-bold">
+                {activeChips.filter((c) => c.key !== 'onlyEligible').length}
+              </span>
+            )}
+            {showAdvanced ? <ChevronUp className="w-3.5 h-3.5 ml-0.5" /> : <ChevronDown className="w-3.5 h-3.5 ml-0.5" />}
           </button>
+
+          {/* Clear All action (visible when filters are active) */}
+          {(hasFiltersActive || filters.query || filters.onlyEligible) && (
+            <button
+              id="btn-clear-all"
+              onClick={resetFilters}
+              className="text-xs text-rose-400 hover:text-rose-300 px-2 py-1 transition-colors whitespace-nowrap shrink-0"
+            >
+              Clear all
+            </button>
+          )}
         </div>
 
-        {/* Advanced filters panel */}
+        {/* ── Collapsible Filters Panel: 3 Groups ────────────────────────── */}
         {showAdvanced && (
-          <div className="border-t border-slate-800 p-4 space-y-4">
-            <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold text-teal-400 flex items-center gap-1.5">
-                <Filter className="w-3.5 h-3.5" /> Student Profile Filters
-              </p>
-              <p className="text-[10px] text-slate-500">
-                <Info className="w-3 h-3 inline mr-1" />Sensitive fields are optional and used only for local matching.
-              </p>
-            </div>
-
-            {/* Row 1: Domicile + Category + Level */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div>
-                <label htmlFor="filter-domicile" className={LABEL_CLS}>State / Domicile</label>
-                <select id="filter-domicile" value={filters.domicile} onChange={(e) => setFilter('domicile', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">All Domiciles</option>
-                  {domicileOptions.map((d) => <option key={d} value={d}>{d}</option>)}
-                </select>
+          <div className="border-t border-slate-800 p-4 space-y-4 bg-slate-950/60">
+            {/* Group 1: Student Profile */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] font-semibold text-slate-300 flex items-center gap-1">
+                  <Filter className="w-3 h-3 text-teal-400" /> Student Profile Criteria
+                </span>
+                <span className="text-[10px] text-slate-500">Sensitive fields are voluntary</span>
               </div>
-              <div>
-                <label htmlFor="filter-category" className={LABEL_CLS}>Social Category</label>
-                <select id="filter-category" value={filters.category} onChange={(e) => setFilter('category', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">All Categories</option>
-                  <option value="GENERAL">General</option>
-                  <option value="OBC">OBC</option>
-                  <option value="SC">SC</option>
-                  <option value="ST">ST</option>
-                  <option value="EWS">EWS</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="filter-level" className={LABEL_CLS}>Education Level</label>
-                <select id="filter-level" value={filters.level} onChange={(e) => setFilter('level', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">All Levels</option>
-                  <option value="HIGHER_SECONDARY">Higher Secondary (Class 11–12)</option>
-                  <option value="UNDERGRADUATE">Undergraduate (UG)</option>
-                  <option value="POSTGRADUATE">Postgraduate (PG)</option>
-                  <option value="DIPLOMA">Diploma / Polytechnic</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Row 2: Gender + Institution + Year */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div>
-                <label htmlFor="filter-gender" className={LABEL_CLS}>Gender — optional</label>
-                <select id="filter-gender" value={filters.gender} onChange={(e) => setFilter('gender', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">All Genders</option>
-                  <option value="FEMALE">Female</option>
-                  <option value="MALE">Male</option>
-                  <option value="OTHER">Other</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="filter-inst" className={LABEL_CLS}>Institution Type</label>
-                <select id="filter-inst" value={filters.institutionType} onChange={(e) => setFilter('institutionType', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">All Types</option>
-                  <option value="GOVERNMENT">Government</option>
-                  <option value="GOVT_AIDED">Government-Aided</option>
-                  <option value="PRIVATE">Private</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="filter-year" className={LABEL_CLS}>Year of Study</label>
-                <select id="filter-year" value={filters.yearOfStudy} onChange={(e) => setFilter('yearOfStudy', e.target.value)} className={SELECT_CLS}>
-                  <option value="ALL">Any Year</option>
-                  {[1, 2, 3, 4, 5, 6].map((y) => <option key={y} value={y.toString()}>Year {y}</option>)}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 3: Income + Marks */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label htmlFor="filter-income" className={LABEL_CLS}>Annual Family Income (₹) — optional</label>
-                <input
-                  id="filter-income"
-                  type="number"
-                  min={0}
-                  value={filters.maxIncome}
-                  onChange={(e) => setFilter('maxIncome', e.target.value)}
-                  placeholder="Enter your income e.g. 150000"
-                  className={SELECT_CLS + ' placeholder-slate-600'}
-                />
-              </div>
-              <div>
-                <label htmlFor="filter-marks" className={LABEL_CLS}>Academic Marks / Percentage — optional</label>
-                <input
-                  id="filter-marks"
-                  type="number"
-                  min={0}
-                  max={100}
-                  step={0.1}
-                  value={filters.minMarks}
-                  onChange={(e) => setFilter('minMarks', e.target.value)}
-                  placeholder="Enter your percentage e.g. 75.5"
-                  className={SELECT_CLS + ' placeholder-slate-600'}
-                />
-              </div>
-            </div>
-
-            {/* Row 4: Scheme characteristics */}
-            <div className="pt-3 border-t border-slate-800/80">
-              <p className="text-xs font-semibold text-violet-400 flex items-center gap-1.5 mb-3">
-                <Sparkles className="w-3.5 h-3.5" /> Scholarship Characteristics
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
                 <div>
-                  <label htmlFor="filter-type" className={LABEL_CLS}>Scheme Type</label>
-                  <select id="filter-type" value={filters.schemeType} onChange={(e) => setFilter('schemeType', e.target.value)} className={SELECT_CLS}>
+                  <label htmlFor="filter-domicile" className={LABEL_CLS}>State / Domicile</label>
+                  <select id="filter-domicile" value={filters.domicile} onChange={(e) => setFilter('domicile', e.target.value)} className={SELECT_CLS}>
+                    <option value="ALL">All Domiciles</option>
+                    {domicileOptions.map((d) => <option key={d} value={d}>{d}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="filter-level" className={LABEL_CLS}>Education Level</label>
+                  <select id="filter-level" value={filters.level} onChange={(e) => setFilter('level', e.target.value)} className={SELECT_CLS}>
+                    <option value="ALL">All Levels</option>
+                    <option value="HIGHER_SECONDARY">Higher Secondary (Class 11–12)</option>
+                    <option value="UNDERGRADUATE">Undergraduate (UG)</option>
+                    <option value="POSTGRADUATE">Postgraduate (PG)</option>
+                    <option value="DIPLOMA">Diploma / Polytechnic</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="filter-year" className={LABEL_CLS}>Year of Study</label>
+                  <select id="filter-year" value={filters.yearOfStudy} onChange={(e) => setFilter('yearOfStudy', e.target.value)} className={SELECT_CLS}>
+                    <option value="ALL">Any Year</option>
+                    {[1, 2, 3, 4, 5, 6].map((y) => <option key={y} value={y.toString()}>Year {y}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="filter-category" className={LABEL_CLS}>Social Category</label>
+                  <select id="filter-category" value={filters.category} onChange={(e) => setFilter('category', e.target.value)} className={SELECT_CLS}>
+                    <option value="ALL">All Categories</option>
+                    <option value="GENERAL">General</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="EWS">EWS</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="filter-inst" className={LABEL_CLS}>Institution Type</label>
+                  <select id="filter-inst" value={filters.institutionType} onChange={(e) => setFilter('institutionType', e.target.value)} className={SELECT_CLS}>
                     <option value="ALL">All Types</option>
-                    <option value="MERIT">Merit</option>
-                    <option value="MEANS">Means (Need-Based)</option>
-                    <option value="MERIT_CUM_MEANS">Merit-cum-Means</option>
-                    <option value="CATEGORY_SPECIFIC">Category Specific</option>
-                    <option value="GENDER_SPECIFIC">Gender Specific</option>
-                    <option value="DISABILITY">Disability</option>
-                    <option value="MINORITY">Minority</option>
+                    <option value="GOVERNMENT">Government</option>
+                    <option value="GOVT_AIDED">Government-Aided</option>
+                    <option value="PRIVATE">Private</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="filter-deadline" className={LABEL_CLS}>Deadline Status</label>
-                  <select id="filter-deadline" value={filters.deadlineStatus} onChange={(e) => setFilter('deadlineStatus', e.target.value)} className={SELECT_CLS}>
-                    <option value="ALL">All Statuses</option>
-                    <option value="CRITICAL">Critical (Imminent)</option>
-                    <option value="UPCOMING">Upcoming</option>
-                    <option value="OPEN">Open</option>
-                    <option value="EXPIRED">Expired</option>
-                    <option value="UNKNOWN">Unknown</option>
-                  </select>
+                  <label htmlFor="filter-income" className={LABEL_CLS}>Annual Family Income (₹) <span className="text-slate-500 font-normal">(optional)</span></label>
+                  <input
+                    id="filter-income"
+                    type="number"
+                    min={0}
+                    value={filters.maxIncome}
+                    onChange={(e) => setFilter('maxIncome', e.target.value)}
+                    placeholder="e.g. 200000"
+                    className={SELECT_CLS + ' placeholder-slate-600'}
+                  />
                 </div>
                 <div>
-                  <label htmlFor="filter-renewable" className={LABEL_CLS}>Award Type</label>
-                  <select id="filter-renewable" value={filters.isRenewable} onChange={(e) => setFilter('isRenewable', e.target.value)} className={SELECT_CLS}>
-                    <option value="ALL">All Award Types</option>
-                    <option value="YES">Renewable (Annual)</option>
-                    <option value="NO">One-Time Award</option>
+                  <label htmlFor="filter-marks" className={LABEL_CLS}>Marks / Percentage (%) <span className="text-slate-500 font-normal">(optional)</span></label>
+                  <input
+                    id="filter-marks"
+                    type="number"
+                    min={0}
+                    max={100}
+                    step={0.1}
+                    value={filters.minMarks}
+                    onChange={(e) => setFilter('minMarks', e.target.value)}
+                    placeholder="e.g. 75"
+                    className={SELECT_CLS + ' placeholder-slate-600'}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="filter-gender" className={LABEL_CLS}>Gender <span className="text-slate-500 font-normal">(optional)</span></label>
+                  <select id="filter-gender" value={filters.gender} onChange={(e) => setFilter('gender', e.target.value)} className={SELECT_CLS}>
+                    <option value="ALL">All Genders</option>
+                    <option value="FEMALE">Female</option>
+                    <option value="MALE">Male</option>
+                    <option value="OTHER">Other</option>
                   </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Group 2 & Group 3: Scholarship Details & Additional Eligibility */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pt-3 border-t border-slate-800">
+              {/* Group 2: Scholarship Details */}
+              <div>
+                <span className="text-[11px] font-semibold text-slate-300 block mb-2">
+                  Scholarship Characteristics
+                </span>
+                <div className="grid grid-cols-3 gap-2">
+                  <div>
+                    <label htmlFor="filter-type" className={LABEL_CLS}>Scheme Type</label>
+                    <select id="filter-type" value={filters.schemeType} onChange={(e) => setFilter('schemeType', e.target.value)} className={SELECT_CLS}>
+                      <option value="ALL">All Types</option>
+                      <option value="MERIT">Merit</option>
+                      <option value="MEANS">Means</option>
+                      <option value="MERIT_CUM_MEANS">Merit-cum-Means</option>
+                      <option value="CATEGORY_SPECIFIC">Category</option>
+                      <option value="GENDER_SPECIFIC">Gender</option>
+                      <option value="DISABILITY">Disability</option>
+                      <option value="MINORITY">Minority</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="filter-renewable" className={LABEL_CLS}>Award Type</label>
+                    <select id="filter-renewable" value={filters.isRenewable} onChange={(e) => setFilter('isRenewable', e.target.value)} className={SELECT_CLS}>
+                      <option value="ALL">All Types</option>
+                      <option value="YES">Renewable</option>
+                      <option value="NO">One-Time</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="filter-deadline" className={LABEL_CLS}>Deadline Status</label>
+                    <select id="filter-deadline" value={filters.deadlineStatus} onChange={(e) => setFilter('deadlineStatus', e.target.value)} className={SELECT_CLS}>
+                      <option value="ALL">All</option>
+                      <option value="CRITICAL">Critical</option>
+                      <option value="UPCOMING">Upcoming</option>
+                      <option value="OPEN">Open</option>
+                      <option value="EXPIRED">Expired</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
-              {/* Toggle checkboxes */}
-              <div className="flex flex-wrap gap-4 mt-3">
-                {[
-                  { key: 'isOpen', label: 'Open Deadline Only', id: 'filter-open' },
-                  { key: 'isDisability', label: 'Disability Schemes', id: 'filter-disability' },
-                  { key: 'isMinority', label: 'Minority Schemes', id: 'filter-minority' },
-                ].map(({ key, label, id }) => (
-                  <label key={key} htmlFor={id} className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      id={id}
-                      type="checkbox"
-                      checked={filters[key as keyof SearchFilters] as boolean}
-                      onChange={(e) => setFilter(key as keyof SearchFilters, e.target.checked as any)}
-                      className="rounded border-slate-600 bg-slate-900 text-teal-500 focus:ring-teal-500"
-                    />
-                    <span className="text-xs text-slate-300">{label}</span>
-                  </label>
-                ))}
+              {/* Group 3: Additional Eligibility Flags */}
+              <div>
+                <span className="text-[11px] font-semibold text-slate-300 block mb-2">
+                  Additional Eligibility
+                </span>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {[
+                    { key: 'isOpen', label: 'Open Deadlines Only', id: 'filter-open' },
+                    { key: 'isDisability', label: 'Disability Schemes', id: 'filter-disability' },
+                    { key: 'isMinority', label: 'Minority Schemes', id: 'filter-minority' },
+                  ].map(({ key, label, id }) => (
+                    <label key={key} htmlFor={id} className="flex items-center gap-2 cursor-pointer bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-800 hover:border-slate-700">
+                      <input
+                        id={id}
+                        type="checkbox"
+                        checked={filters[key as keyof SearchFilters] as boolean}
+                        onChange={(e) => setFilter(key as keyof SearchFilters, e.target.checked as any)}
+                        className="rounded border-slate-700 bg-slate-950 text-teal-500 focus:ring-teal-500 w-3.5 h-3.5"
+                      />
+                      <span className="text-xs text-slate-300">{label}</span>
+                    </label>
+                  ))}
+                </div>
               </div>
+            </div>
+
+            {/* Bottom Actions inside Panel */}
+            <div className="pt-2 border-t border-slate-800 flex items-center justify-end gap-2">
+              <button
+                type="button"
+                onClick={resetFilters}
+                className="px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white transition-colors"
+              >
+                Reset Filters
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowAdvanced(false)}
+                className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-500 hover:bg-teal-400 text-slate-950 transition-colors"
+              >
+                Apply Filters
+              </button>
             </div>
           </div>
         )}
 
-        {/* Active filter chips + result count */}
+        {/* Active Filter Chips Row (Visible outside panel) */}
         {(activeChips.length > 0 || filters.query) && (
-          <div className="border-t border-slate-800 px-4 py-3 flex flex-wrap items-center gap-2">
-            <span className="text-[10px] text-slate-500 font-semibold uppercase">Active:</span>
+          <div className="border-t border-slate-800/80 px-3 py-2 flex flex-wrap items-center gap-1.5 bg-slate-950/40">
+            <span className="text-[10px] text-slate-500 font-medium">Active:</span>
             {filters.query && (
               <FilterChip label={`"${filters.query}"`} onRemove={() => setFilter('query', '')} />
             )}
@@ -541,34 +574,29 @@ export const DiscoveryView: React.FC<DiscoveryViewProps> = ({
             <button
               id="btn-reset-filters"
               onClick={resetFilters}
-              className="ml-auto text-[10px] text-rose-400 hover:text-rose-300 font-semibold transition-colors flex items-center gap-1"
+              className="ml-auto text-[11px] text-rose-400 hover:text-rose-300 font-medium transition-colors"
             >
-              <X className="w-3 h-3" /> Clear All
+              Clear all
             </button>
           </div>
         )}
       </div>
 
-      {/* ── Result count bar ─────────────────────────────────────────────── */}
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-slate-400">
-          <span className="text-white font-bold">{sortedSchemes.length}</span> scholarship
-          {sortedSchemes.length !== 1 ? 's' : ''} found
-          {sortedSchemes.length !== schemes.length && (
-            <span className="ml-1 text-slate-500">(of {schemes.length} total)</span>
-          )}
+      {/* ── 3. Results Header ────────────────────────────────────────────── */}
+      <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
+        <p>
+          Showing <span className="font-bold text-white">{sortedSchemes.length}</span> of {schemes.length} scholarships
         </p>
         {compareIds.size > 0 && (
-          <p className="text-xs text-violet-300">
-            <Zap className="w-3.5 h-3.5 inline mr-1" />
-            {compareIds.size} selected for comparison
-          </p>
+          <span className="text-teal-400 font-medium">
+            {compareIds.size} of 3 selected to compare
+          </span>
         )}
       </div>
 
-      {/* ── Scholarship grid ─────────────────────────────────────────────── */}
+      {/* ── 4. Scholarship Cards Grid ────────────────────────────────────── */}
       {sortedSchemes.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {sortedSchemes.map((scheme) => (
             <ScholarshipCard
               key={scheme.id}
@@ -582,16 +610,16 @@ export const DiscoveryView: React.FC<DiscoveryViewProps> = ({
           ))}
         </div>
       ) : (
-        <div className="p-12 text-center rounded-2xl bg-slate-900/40 border border-slate-800 space-y-3">
-          <AlertCircle className="w-8 h-8 text-slate-500 mx-auto" />
-          <h3 className="text-base font-bold text-white">No scholarships match the selected filters</h3>
-          <p className="text-xs text-slate-400 max-w-md mx-auto">
-            Try resetting your filters or removing the eligibility-only toggle to see all government circulars.
+        <div className="p-10 text-center rounded-xl bg-slate-900/40 border border-slate-800 space-y-3">
+          <AlertCircle className="w-7 h-7 text-slate-500 mx-auto" />
+          <h3 className="text-sm font-bold text-white">No scholarships match the selected filters</h3>
+          <p className="text-xs text-slate-400 max-w-sm mx-auto">
+            Try clearing filters or removing the "Eligible only" toggle to view other opportunities.
           </p>
           <button
             id="btn-reset-empty-state"
             onClick={resetFilters}
-            className="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-teal-300 hover:bg-slate-700 border border-slate-700"
+            className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-teal-300 hover:bg-slate-700 border border-slate-700 transition-colors"
           >
             Reset All Filters
           </button>

@@ -143,145 +143,137 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
 }) => {
   const evalResult = evaluation || evaluateLocalEligibility(scheme, profile);
 
-  // Scheme type badge color
-  const typeColors: Record<string, string> = {
-    MERIT: 'bg-blue-500/15 text-blue-300 border-blue-500/30',
-    MEANS: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
-    MERIT_CUM_MEANS: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30',
-    CATEGORY_SPECIFIC: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
-    GENDER_SPECIFIC: 'bg-pink-500/15 text-pink-300 border-pink-500/30',
-    DISABILITY: 'bg-teal-500/15 text-teal-300 border-teal-500/30',
-    MINORITY: 'bg-orange-500/15 text-orange-300 border-orange-500/30',
-    FELLOWSHIP: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
-  };
+  const daysRemaining = React.useMemo(() => {
+    try {
+      const diff = new Date(scheme.applicationDeadline).getTime() - new Date().getTime();
+      return Math.max(0, Math.ceil(diff / (1000 * 3600 * 24)));
+    } catch {
+      return undefined;
+    }
+  }, [scheme.applicationDeadline]);
+
+  // Key criteria summary text
+  const criteriaSummary = React.useMemo(() => {
+    const parts: string[] = [];
+    if (scheme.criteria.allowedLevels && scheme.criteria.allowedLevels.length > 0) {
+      parts.push(scheme.criteria.allowedLevels[0].replace(/_/g, ' '));
+    }
+    if (scheme.criteria.allowedDomiciles && scheme.criteria.allowedDomiciles.length > 0) {
+      parts.push(scheme.criteria.allowedDomiciles[0]);
+    }
+    if (scheme.criteria.maxFamilyIncome != null) {
+      parts.push(`Income ≤ ₹${(scheme.criteria.maxFamilyIncome / 100000).toFixed(1)}L`);
+    }
+    if (scheme.criteria.minMarksPercentage != null) {
+      parts.push(`≥ ${scheme.criteria.minMarksPercentage}%`);
+    }
+    return parts.join(' • ');
+  }, [scheme.criteria]);
 
   return (
-    <div className={`rounded-2xl border shadow-lg flex flex-col justify-between transition-all group overflow-hidden ${
-      isInCompare
-        ? 'bg-violet-950/30 border-violet-500/50 ring-1 ring-violet-500/30'
-        : 'bg-navy-900/70 border-slate-800 hover:border-slate-700'
-    }`}>
-      {/* Top Meta Bar */}
-      <div className="p-5 border-b border-slate-800/80 bg-navy-950/40 space-y-3">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <ProvenanceBadge status={scheme.verificationStatus} />
-          <DeadlineBadge
-            status={scheme.deadlineStatus}
-            daysRemaining={
-              Math.max(
-                0,
-                Math.ceil(
-                  (new Date(scheme.applicationDeadline).getTime() - new Date().getTime()) /
-                    (1000 * 3600 * 24)
-                )
-              )
-            }
-          />
-        </div>
-
-        {/* Scheme type + renewable badges */}
-        {(scheme.schemeType || scheme.isRenewable != null) && (
-          <div className="flex flex-wrap gap-1.5">
-            {scheme.schemeType && (
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${typeColors[scheme.schemeType] || 'bg-slate-700 text-slate-300 border-slate-600'}`}>
-                {scheme.schemeType.replace(/_/g, ' ')}
-              </span>
-            )}
-            {scheme.isRenewable != null && (
-              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
-                scheme.isRenewable
-                  ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
-                  : 'bg-slate-700 text-slate-400 border-slate-600'
-              }`}>
-                {scheme.isRenewable ? 'Renewable' : 'One-Time'}
-              </span>
-            )}
-          </div>
-        )}
-
-        <div>
-          <h3 className="text-base font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
+    <div
+      className={`rounded-xl border transition-all flex flex-col justify-between overflow-hidden group ${
+        isInCompare
+          ? 'bg-slate-900 border-teal-500/50 ring-1 ring-teal-500/30'
+          : 'bg-slate-900/40 border-slate-800 hover:border-slate-700 hover:bg-slate-900/70'
+      }`}
+    >
+      {/* ── Top Header Row ──────────────────────────────────────────────── */}
+      <div className="p-4 pb-3 space-y-2 border-b border-slate-800/50">
+        <div className="flex items-start justify-between gap-2">
+          <h3
+            onClick={() => onSelect(scheme)}
+            className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors leading-snug line-clamp-2 cursor-pointer flex-1"
+          >
             {scheme.name}
           </h3>
-          <p className="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-            <Building className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-            <span className="truncate">{scheme.authority}</span>
-          </p>
-        </div>
-      </div>
-
-      {/* Body Content */}
-      <div className="p-5 space-y-4 flex-1">
-        {/* Benefit Highlight Box */}
-        <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start justify-between gap-3">
-          <div>
-            <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-              Verified Benefit Entitlement
-            </div>
-            <div className="text-sm font-extrabold text-teal-300 mt-0.5">
-              {scheme.benefitAmountFormatted}
-            </div>
-            <div className="text-[11px] text-slate-400 mt-0.5">{scheme.benefitType}</div>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <ProvenanceBadge status={scheme.verificationStatus} size="xs" />
+            <DeadlineBadge status={scheme.deadlineStatus} daysRemaining={daysRemaining} size="xs" />
           </div>
         </div>
 
-        {/* Eligibility Verdict Banner */}
+        <p className="text-xs text-slate-400 truncate flex items-center gap-1.5">
+          <Building className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+          <span className="truncate">{scheme.authority}</span>
+        </p>
+      </div>
+
+      {/* ── Main Content ───────────────────────────────────────────────── */}
+      <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">
         <div className="space-y-2">
+          {/* Eligibility criteria summary */}
+          {criteriaSummary && (
+            <p className="text-[11px] text-slate-400 truncate" title={criteriaSummary}>
+              {criteriaSummary}
+            </p>
+          )}
+
+          {/* Benefit Amount (Prominent, clean) */}
+          <div className="flex items-baseline justify-between pt-1 pb-1">
+            <span className="text-sm font-extrabold text-teal-300 tracking-tight">
+              {scheme.benefitAmountFormatted}
+            </span>
+            <span className="text-[10px] text-slate-500 uppercase tracking-wider font-medium">
+              {scheme.schemeType.replace(/_/g, ' ')}
+            </span>
+          </div>
+        </div>
+
+        {/* Student Eligibility Result (At most 2 concise reasons) */}
+        <div className="pt-2 border-t border-slate-800/40 space-y-1.5">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold text-slate-300">Eligibility Analysis</span>
+            <span className="text-[11px] font-medium text-slate-400">Match for you</span>
             <VerdictBadge verdict={evalResult.verdict} />
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1.5 text-xs">
-            {evalResult.satisfiedConditions.slice(0, 2).map((c, i) => (
-              <div key={i} className="flex items-start text-emerald-300/90 gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="line-clamp-1">{c}</span>
-              </div>
-            ))}
-
-            {evalResult.conflictingConditions.map((c, i) => (
-              <div key={i} className="flex items-start text-rose-300/90 gap-1.5">
-                <XCircle className="w-3.5 h-3.5 text-rose-400 shrink-0 mt-0.5" />
-                <span className="line-clamp-1">{c}</span>
-              </div>
-            ))}
+          <div className="space-y-1 text-[11px]">
+            {evalResult.conflictingConditions.length > 0 ? (
+              evalResult.conflictingConditions.slice(0, 2).map((c, i) => (
+                <div key={i} className="flex items-start text-rose-300/90 gap-1.5 leading-snug">
+                  <XCircle className="w-3 h-3 text-rose-400 shrink-0 mt-0.5" />
+                  <span className="line-clamp-1">{c}</span>
+                </div>
+              ))
+            ) : evalResult.satisfiedConditions.length > 0 ? (
+              evalResult.satisfiedConditions.slice(0, 2).map((c, i) => (
+                <div key={i} className="flex items-start text-emerald-300/90 gap-1.5 leading-snug">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="line-clamp-1">{c}</span>
+                </div>
+              ))
+            ) : (
+              <p className="text-slate-500 text-[10px]">No criteria conflicts detected.</p>
+            )}
           </div>
         </div>
-
-        {scheme.isExtensionAnnounced && (
-          <div className="p-2 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-[11px] text-cyan-300 flex items-center gap-1.5">
-            <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-            <span>Official circular extension announced (previously {scheme.previousDeadline})</span>
-          </div>
-        )}
       </div>
 
-      {/* Action Footer */}
-      <div className="p-4 border-t border-slate-800/80 bg-navy-950/30 flex items-center justify-between gap-2">
+      {/* ── Footer ─────────────────────────────────────────────────────── */}
+      <div className="px-4 py-2.5 border-t border-slate-800/60 bg-slate-950/40 flex items-center justify-between gap-2">
         <a
           href={scheme.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-xs text-slate-400 hover:text-white transition-colors"
-          title="Visit official portal in new tab"
+          className="inline-flex items-center text-[11px] text-slate-400 hover:text-white transition-colors truncate max-w-[130px]"
+          title="Visit official portal"
         >
-          <ExternalLink className="w-3.5 h-3.5 mr-1 text-slate-500" />
-          <span className="truncate max-w-[100px]">{scheme.portalName}</span>
+          <ExternalLink className="w-3 h-3 mr-1 text-slate-500 shrink-0" />
+          <span className="truncate">{scheme.portalName}</span>
         </a>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           {onToggleCompare && (
             <button
               onClick={onToggleCompare}
               disabled={compareDisabled}
               title={isInCompare ? 'Remove from comparison' : 'Add to comparison (max 3)'}
-              className={`p-1.5 rounded-lg text-[10px] border transition-colors ${
+              className={`p-1.5 rounded-lg text-xs border transition-colors ${
                 isInCompare
-                  ? 'bg-violet-500/20 text-violet-300 border-violet-500/40'
+                  ? 'bg-teal-500/20 text-teal-300 border-teal-500/40'
                   : compareDisabled
-                  ? 'opacity-40 cursor-not-allowed bg-slate-900 text-slate-500 border-slate-700'
-                  : 'bg-slate-900 text-slate-400 border-slate-700 hover:border-violet-500/40 hover:text-violet-300'
+                  ? 'opacity-30 cursor-not-allowed bg-slate-900 text-slate-600 border-slate-800'
+                  : 'bg-slate-900 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-white'
               }`}
             >
               <BarChart3 className="w-3.5 h-3.5" />
@@ -289,10 +281,10 @@ export const ScholarshipCard: React.FC<ScholarshipCardProps> = ({
           )}
           <button
             onClick={() => onSelect(scheme)}
-            className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-500/40 transition-colors"
+            className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/10 hover:bg-teal-500/20 text-teal-300 border border-teal-500/30 transition-colors"
           >
-            <span>Details & Rules</span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            <span>View Details</span>
+            <ArrowRight className="w-3 h-3 ml-1" />
           </button>
         </div>
       </div>

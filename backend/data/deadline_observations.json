@@ -395,6 +395,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-central-sector-csss",
+      "scheme_name": "Central Sector Scheme of Scholarships for College & University Students (CSSS)",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-10",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "nsp-pm-scholarship-scheme-rpf": [
@@ -790,6 +856,72 @@
       "official_url": "https://scholarships.gov.in",
       "deadline": "2026-11-30",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-pm-scholarship-scheme-rpf",
+      "scheme_name": "Prime Minister's Scholarship Scheme for RPF/RPSF Personnel",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -1191,6 +1323,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "ugc-ishan-uday-northeast",
+      "scheme_name": "UGC Ishan Uday Special Scholarship Scheme for North-East Region",
+      "portal_name": "National Scholarship Portal (scholarships.gov.in)",
+      "official_url": "https://scholarships.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "nsp-begum-hazrat-mahal-minority-girls": [
@@ -1586,6 +1784,72 @@
       "official_url": "https://maef.nic.in",
       "deadline": "2026-10-31",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "nsp-begum-hazrat-mahal-minority-girls",
+      "scheme_name": "Begum Hazrat Mahal National Scholarship for Minorities (Girls)",
+      "portal_name": "MAEF / NSP Portal (maef.nic.in / scholarships.gov.in)",
+      "official_url": "https://maef.nic.in",
+      "deadline": "2026-10-31",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -1987,6 +2251,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-pragati-girls",
+      "scheme_name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree/Diploma)",
+      "portal_name": "NSP & AICTE Portal (aicte-india.org / scholarships.gov.in)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "aicte-saksham-disability": [
@@ -2382,6 +2712,72 @@
       "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
       "deadline": "2026-12-05",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "aicte-saksham-disability",
+      "scheme_name": "AICTE Saksham Scholarship for Differently Abled Students",
+      "portal_name": "NSP & AICTE Portal",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "deadline": "2026-12-05",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -2783,6 +3179,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": true,
       "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
+    },
+    {
+      "scheme_id": "up-post-matric-obc-gen",
+      "scheme_name": "UP Post-Matric Scholarship & Fee Reimbursement (Dashmottar) — OBC/General/EWS",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-15",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": true,
+      "previous_deadline": "2026-10-31"
     }
   ],
   "up-post-matric-sc-st": [
@@ -3178,6 +3640,72 @@
       "official_url": "https://scholarship.up.gov.in",
       "deadline": "2026-11-30",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "up-post-matric-sc-st",
+      "scheme_name": "UP Post-Matric Scholarship for Scheduled Castes / Scheduled Tribes",
+      "portal_name": "UP Scholarship Portal (scholarship.up.gov.in)",
+      "official_url": "https://scholarship.up.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -3579,6 +4107,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-post-matric-sc-scholarship",
+      "scheme_name": "Bihar Post-Matric Scholarship for SC Students",
+      "portal_name": "Bihar Scholarship Portal (pmsonline.bih.nic.in)",
+      "official_url": "https://pmsonline.bih.nic.in",
+      "deadline": "2026-12-15",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "bihar-mukhyamantri-medhavi-yojana": [
@@ -3974,6 +4568,72 @@
       "official_url": "https://medhasoft.bih.nic.in",
       "deadline": "2026-11-30",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "bihar-mukhyamantri-medhavi-yojana",
+      "scheme_name": "Bihar Mukhyamantri Medhavriti Yojana (Intermediate Passed SC/ST Girls)",
+      "portal_name": "Bihar Student Credit Card Portal (7nishchay-yuvaupmission.bihar.gov.in)",
+      "official_url": "https://medhasoft.bih.nic.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -4375,6 +5035,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-sc-post-matric",
+      "scheme_name": "Haryana Post-Matric Scholarship for SC Students",
+      "portal_name": "Haryana Scholarship Portal (haryana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "haryana-merit-scholarship-bc": [
@@ -4770,6 +5496,72 @@
       "official_url": "https://haryanascbc.gov.in",
       "deadline": "2026-11-30",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "haryana-merit-scholarship-bc",
+      "scheme_name": "Haryana Merit Scholarship for BC-A/BC-B Category Students",
+      "portal_name": "Saral Haryana (saralharyana.gov.in)",
+      "official_url": "https://haryanascbc.gov.in",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
@@ -5171,6 +5963,72 @@
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-palanhar-yojana",
+      "scheme_name": "Rajasthan Palanhar Yojana — Scholarship for Orphans and Destitute Children",
+      "portal_name": "SJE Rajasthan Portal (sje.rajasthan.gov.in)",
+      "official_url": "https://sje.rajasthan.gov.in/schemes/Palanhar.html",
+      "deadline": "2026-12-31",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
     }
   ],
   "rajasthan-mukhyamantri-uchch-shiksha": [
@@ -5566,6 +6424,72 @@
       "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
       "deadline": "2026-11-30",
       "retrieved_at": "2026-10-24T23:00:45.819769",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.553101",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:17.780076",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.046204",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.290086",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.607445",
+      "verification_status": "VERIFIED_OFFICIAL",
+      "was_extended": false,
+      "previous_deadline": null
+    },
+    {
+      "scheme_id": "rajasthan-mukhyamantri-uchch-shiksha",
+      "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship Yojana",
+      "portal_name": "Rajasthan Higher Education Scholarship Portal (hte.rajasthan.gov.in)",
+      "official_url": "https://hte.rajasthan.gov.in/scholarship.php",
+      "deadline": "2026-11-30",
+      "retrieved_at": "2026-10-24T23:12:18.923360",
       "verification_status": "VERIFIED_OFFICIAL",
       "was_extended": false,
       "previous_deadline": null
