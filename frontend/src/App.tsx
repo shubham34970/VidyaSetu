@@ -6,10 +6,15 @@ import { INITIAL_STUDENT_PROFILE } from './data/verifiedSchemes';
 
 import { LandingView } from './views/LandingView';
 import { ProfileWizardView } from './views/ProfileWizardView';
+import { DiscoveryView } from './views/DiscoveryView';
+import { VERIFIED_SCHEMES } from './data/verifiedSchemes';
+import type { ScholarshipScheme } from './types';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavTab>('landing');
   const [profile, setProfile] = useState<StudentProfile>(INITIAL_STUDENT_PROFILE);
+  const [schemes, setSchemes] = useState<ScholarshipScheme[]>(VERIFIED_SCHEMES);
+  const [selectedScheme, setSelectedScheme] = useState<ScholarshipScheme | null>(null);
   const [backendOnline, setBackendOnline] = useState<boolean>(false);
   const [tinyfishInstalled, setTinyfishInstalled] = useState<boolean>(false);
 
@@ -48,7 +53,14 @@ export const App: React.FC = () => {
             onComplete={() => setActiveTab('discovery')}
           />
         )}
-        {activeTab !== 'landing' && activeTab !== 'profile' && (
+        {activeTab === 'discovery' && (
+          <DiscoveryView
+            schemes={schemes}
+            profile={profile}
+            onSelectScheme={setSelectedScheme}
+          />
+        )}
+        {activeTab !== 'landing' && activeTab !== 'profile' && activeTab !== 'discovery' && (
           <div className="text-center py-12">
             <h2 className="text-2xl font-bold text-white mb-2">View: {activeTab}</h2>
             <p className="text-slate-400 text-sm">Under active assembly</p>
