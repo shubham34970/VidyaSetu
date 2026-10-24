@@ -14,6 +14,8 @@ import { ScholarshipDetailModal } from './components/ScholarshipDetailModal';
 import { VERIFIED_SCHEMES } from './data/verifiedSchemes';
 import type { ScholarshipScheme } from './types';
 
+import { api } from './services/api';
+
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<NavTab>('landing');
   const [profile, setProfile] = useState<StudentProfile>(INITIAL_STUDENT_PROFILE);
@@ -21,13 +23,12 @@ export const App: React.FC = () => {
   const [selectedScheme, setSelectedScheme] = useState<ScholarshipScheme | null>(null);
   const [backendOnline, setBackendOnline] = useState<boolean>(false);
   const [tinyfishInstalled, setTinyfishInstalled] = useState<boolean>(false);
+  const [isSyncing, setIsSyncing] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/health')
-      .then((res) => {
-        if (!res.ok) throw new Error('Offline');
-        return res.json();
-      })
+    // Initial health check
+    api
+      .getHealth()
       .then((data) => {
         setBackendOnline(data.status === 'ok');
         setTinyfishInstalled(Boolean(data.tinyfish?.cli_installed));
@@ -36,7 +37,29 @@ export const App: React.FC = () => {
         setBackendOnline(false);
         setTinyfishInstalled(false);
       });
+
+    // Initial schemes fetch
+    api
+      .getScholarships()
+      .then((data) => {
+        if (data && data.length > 0) setSchemes(data);
+      })
+      .catch(() => {});
   }, []);
+
+  const handleRefreshDiscovery = async () => {
+    setIsSyncing(true);
+    try {
+      const res = await api.searchDiscovery('scholarships', true);
+      if (res && res.schemes && res.schemes.length > 0) {
+        setSchemes(res.schemes);
+      }
+    } catch {
+      // Fallback intact
+    } finally {
+      setIsSyncing(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-teal-500 selection:text-white">
@@ -62,6 +85,8 @@ export const App: React.FC = () => {
             schemes={schemes}
             profile={profile}
             onSelectScheme={setSelectedScheme}
+            onRefreshDiscovery={handleRefreshDiscovery}
+            isSyncing={isSyncing}
           />
         )}
         {activeTab === 'auditor' && <DocumentAuditorView profile={profile} />}
