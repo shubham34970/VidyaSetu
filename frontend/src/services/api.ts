@@ -36,20 +36,34 @@ export const api = {
     domicile?: string;
     category?: string;
     max_income?: number;
+    query?: string;
+    level?: string;
+    scheme_type?: string;
+    sort?: string;
   }): Promise<ScholarshipScheme[]> {
     try {
       const queryParams = new URLSearchParams();
       if (params?.domicile && params.domicile !== 'ALL') queryParams.append('domicile', params.domicile);
       if (params?.category && params.category !== 'ALL') queryParams.append('category', params.category);
       if (params?.max_income) queryParams.append('max_income', params.max_income.toString());
+      if (params?.query) queryParams.append('query', params.query);
+      if (params?.level && params.level !== 'ALL') queryParams.append('level', params.level);
+      if (params?.scheme_type && params.scheme_type !== 'ALL') queryParams.append('scheme_type', params.scheme_type);
+      if (params?.sort) queryParams.append('sort', params.sort);
 
-      const url = `${API_BASE_URL}/scholarships${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+      const url = `${API_BASE_URL}/schemes${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
       const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      return data.schemes;
+      if (res.ok) {
+        const data = await res.json();
+        return data.schemes;
+      }
+      const fallbackRes = await fetch(`${API_BASE_URL}/scholarships`);
+      if (fallbackRes.ok) {
+        const data = await fallbackRes.json();
+        return data.schemes;
+      }
+      return VERIFIED_SCHEMES;
     } catch {
-      // Graceful offline fallback
       return VERIFIED_SCHEMES;
     }
   },
