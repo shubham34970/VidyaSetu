@@ -1,7 +1,8 @@
 # VidyaSetu — Welfare Intelligence
 > **Autonomous Scholarship, Grant & Higher-Education Entitlement Engine**  
 > **HackIIITD 2026** | **Team TwoBit** | **KIET Group of Institutions, Ghaziabad (Delhi-NCR)**  
-> **Project Lead:** Shubham Kumar  
+> **Project Lead:** Shubham Kumar
+> **Contributor:** Rashi Sharma
 > **Repository:** [https://github.com/shubham34970/VidyaSetu.git](https://github.com/shubham34970/VidyaSetu.git)  
 > **Powered by:** TinyFish API (Dynamic Web Navigation & Extraction)
 
